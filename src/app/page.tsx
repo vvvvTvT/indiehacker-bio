@@ -1,101 +1,110 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import Link from 'next/link'
+import { FaTwitter, FaYoutube, FaLinkedin, FaGithub, FaInstagram, FaFacebook, FaTiktok, FaPinterest, FaReddit, FaMedium } from 'react-icons/fa'
+import { HiMail } from 'react-icons/hi'
+import { IoDocumentText } from 'react-icons/io5'
+import { FaCode, FaShoppingCart, FaCubes, FaCalendarAlt, FaVideo, FaDumbbell, FaLanguage } from 'react-icons/fa'
+import { BiCast } from 'react-icons/bi'
+import { AiOutlineRobot } from 'react-icons/ai'
+import { useTheme } from 'next-themes'
+import { useState, useEffect } from 'react'
+
+export default function Component() {
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
+
+  const socialLinks = [
+    { name: 'follow @iannuttall', icon: FaTwitter, url: 'https://twitter.com/iannuttall', description: 'this is where i\'m most active', color: 'bg-blue-100 dark:bg-blue-900' },
+    { name: 'subscribe to my youtube', icon: FaYoutube, url: 'https://www.youtube.com/@iannuttall', description: 'if you follow me i get cool gold videos', color: 'bg-red-100 dark:bg-red-900' },
+    { name: 'connect on linkedin', icon: FaLinkedin, url: 'https://www.linkedin.com/in/iannuttall/', description: 'i\'m rarely here professionally enough to be on here', color: 'bg-blue-100 dark:bg-blue-900' },
+    { name: 'follow on github', icon: FaGithub, url: 'https://github.com/iannuttall', description: 'check out my open source projects', color: 'bg-gray-100 dark:bg-gray-800' },
+    { name: 'follow on instagram', icon: FaInstagram, url: 'https://www.instagram.com/iannuttall', description: 'behind the scenes of my projects', color: 'bg-pink-100 dark:bg-pink-900' },
+    { name: 'connect on facebook', icon: FaFacebook, url: 'https://www.facebook.com/iannuttall', description: 'occasional updates and thoughts', color: 'bg-blue-100 dark:bg-blue-900' },
+    { name: 'follow on tiktok', icon: FaTiktok, url: 'https://www.tiktok.com/@iannuttall', description: 'short-form content and tips', color: 'bg-gray-100 dark:bg-gray-800' },
+    { name: 'follow on pinterest', icon: FaPinterest, url: 'https://www.pinterest.com/iannuttall', description: 'visual inspiration and project ideas', color: 'bg-red-100 dark:bg-red-900' },
+    { name: 'join me on reddit', icon: FaReddit, url: 'https://www.reddit.com/user/iannuttall', description: 'discussions and community engagement', color: 'bg-orange-100 dark:bg-orange-900' },
+    { name: 'read on medium', icon: FaMedium, url: 'https://medium.com/@iannuttall', description: 'in-depth articles and thought pieces', color: 'bg-green-100 dark:bg-green-900' },
+  ]
+
+  const projects = [
+    { name: 'create pages', description: 'No-code tool to create programmatic web pages. Streamline your web development process and create dynamic, data-driven pages without writing a single line of code. Perfect for marketers and entrepreneurs.', icon: IoDocumentText, color: 'bg-orange-100 dark:bg-orange-900' },
+    { name: 'practical programmatic', description: 'Comprehensive programmatic SEO course. Learn how to scale your content creation and optimize for search engines using data-driven techniques. Ideal for SEO professionals and content creators looking to boost their online presence.', icon: FaCode, color: 'bg-green-100 dark:bg-green-900' },
+    { name: 'cursor casts', description: 'Learn how to code using cursor.so. Dive into interactive coding tutorials and real-time collaboration features. Enhance your programming skills with hands-on exercises and expert guidance.', icon: BiCast, color: 'bg-gray-100 dark:bg-gray-800' },
+    { name: 'AI writing assistant', description: 'AI-powered tool for content creation. Leverage advanced language models to generate high-quality articles, blog posts, and marketing copy. Boost your productivity and overcome writer\'s block with intelligent suggestions.', icon: AiOutlineRobot, color: 'bg-blue-100 dark:bg-blue-900' },
+    { name: 'e-commerce platform', description: 'Scalable solution for online stores. Build and manage your e-commerce business with ease. Features include inventory management, secure payments, and customizable storefronts to help you grow your online presence.', icon: FaShoppingCart, color: 'bg-purple-100 dark:bg-purple-900' },
+    { name: 'blockchain explorer', description: 'Comprehensive tool for viewing blockchain transactions. Dive deep into cryptocurrency networks, analyze token movements, and track smart contract interactions. Essential for researchers and crypto enthusiasts.', icon: FaCubes, color: 'bg-yellow-100 dark:bg-yellow-900' },
+    { name: 'social media scheduler', description: 'Automate your social media posts across multiple platforms. Plan and schedule content in advance, analyze post performance, and optimize your social media strategy. Perfect for marketers and content creators.', icon: FaCalendarAlt, color: 'bg-pink-100 dark:bg-pink-900' },
+    { name: 'virtual event platform', description: 'Host engaging online conferences and meetups. Create immersive virtual spaces, manage attendees, and facilitate networking opportunities. Ideal for event organizers looking to expand their reach beyond physical limitations.', icon: FaVideo, color: 'bg-indigo-100 dark:bg-indigo-900' },
+    { name: 'fitness tracking app', description: 'Monitor your workouts and track your fitness progress. Set goals, log exercises, and visualize your improvements over time. Integrates with popular fitness devices and offers personalized workout recommendations.', icon: FaDumbbell, color: 'bg-red-100 dark:bg-red-900' },
+    { name: 'language learning game', description: 'Fun and interactive way to learn new languages. Gamify your language learning experience with challenges, quizzes, and real-world scenarios. Suitable for beginners and advanced learners alike.', icon: FaLanguage, color: 'bg-teal-100 dark:bg-teal-900' },
+  ]
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className="flex min-h-screen flex-col items-center justify-center p-4 md:p-24 dark:bg-gray-900 dark:text-white">
+      <button
+        onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+        className="fixed top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-800"
+      >
+        {theme === 'dark' ? '🌞' : '🌙'}
+      </button>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <div className="w-full max-w-md">
+        <h1 className="text-4xl font-bold mb-4 text-center">ian nuttall</h1>
+        <p className="text-sm mb-8 text-center">
+          life: serial internet biz builder. 100+ exits. always learning. usually from my mistakes.
+        </p>
+
+        <div className="space-y-4">
+          <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md border border-gray-300 dark:border-gray-700">
+            <h2 className="font-bold mb-2 flex items-center">
+              <HiMail className="mr-2 text-2xl" />
+              join ian's list
+            </h2>
+            <p className="text-xs mb-2">sporadic emails where i talk about what i'm working on (usually ai coding, programming and web apps)</p>
+            <form className="flex">
+              <input
+                type="email"
+                placeholder="Type your email and hit enter to join"
+                className="flex-grow p-2 text-sm border rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+              />
+              <button type="submit" className="bg-red-500 text-white px-4 rounded-r-md hover:bg-red-600 transition-colors">
+                Go
+              </button>
+            </form>
+          </div>
+
+          {socialLinks.map((link, index) => (
+            <Link key={index} href={link.url} className={`block ${link.color} p-4 rounded-md hover:opacity-80 transition-colors border border-gray-300 dark:border-gray-700`}>
+              <h2 className="font-bold flex items-center">
+                <link.icon className="mr-2 text-2xl" />
+                {link.name}
+              </h2>
+              <p className="text-xs">{link.description}</p>
+            </Link>
+          ))}
+
+          <h3 className="font-bold mt-8 mb-4">projects</h3>
+
+          {projects.map((project, index) => (
+            <Link key={index} href="#" className={`block ${project.color} p-4 rounded-md hover:opacity-80 transition-colors border border-gray-300 dark:border-gray-700`}>
+              <h2 className="font-bold flex items-center">
+                <project.icon className="mr-2 text-2xl" />
+                {project.name}
+              </h2>
+              <p className="text-xs">{project.description}</p>
+            </Link>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </div>
+    </main>
+  )
 }
