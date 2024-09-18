@@ -2,9 +2,7 @@
 
 import Link from 'next/link'
 import { FaTwitter, FaYoutube, FaLinkedin, FaGithub, FaInstagram, FaFacebook, FaTiktok, FaPinterest, FaReddit, FaMedium, FaTelegram, FaLeaf, FaImage, FaHome, FaChartLine } from 'react-icons/fa'
-import { IoDocumentText } from 'react-icons/io5'
-import { FaCode, FaShoppingCart, FaCubes, FaCalendarAlt, FaVideo, FaDumbbell, FaLanguage } from 'react-icons/fa'
-import { BiCast } from 'react-icons/bi'
+import { FaShoppingCart, FaCubes, FaCalendarAlt, FaVideo, FaDumbbell, FaLanguage } from 'react-icons/fa'
 import { AiOutlineRobot } from 'react-icons/ai'
 import { useTheme } from 'next-themes'
 import { useState, useEffect } from 'react'
@@ -92,17 +90,17 @@ export default function Component() {
         </div>
       </nav>
 
-      <div className="w-full max-w-6xl mt-16 flex flex-col">
+      <div className="w-full max-w-6xl mt-8 flex flex-col space-y-8 p-4">
         <div className="mb-8 text-center">
           <h1 className="text-4xl font-bold mb-2">Wincatcher</h1>
           <p className="text-lg">Serial internet biz builder. 100+ exits. Always learning, usually from mistakes.</p>
         </div>
 
-        <div id="telegram" className="mb-8">
+        <div id="telegram" className="mb-4">
           <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md border border-gray-300 dark:border-gray-700 max-w-md mx-auto">
             <h2 className="font-bold mb-2 flex items-center justify-center">
               <FaTelegram className="mr-2 text-2xl" />
-              Join wincatcher's Telegram Channel
+              Join wincatcher&apos;s Telegram Channel
             </h2>
             <p className="text-xs mb-2 text-center">Get the latest updates on ongoing projects (usually AI coding, programming, and web apps)</p>
             <a 
@@ -130,7 +128,7 @@ export default function Component() {
             <div id="social" className={`space-y-4 transition-opacity duration-1000 ${socialInView ? 'opacity-100' : 'opacity-0'}`} ref={socialRef}>
               <h3 className="font-bold mb-4">Social Media</h3>
               {filteredSocialLinks.map((link, index) => (
-                <Link key={index} href={link.url} target="_blank" rel="noopener noreferrer" className={`block ${link.color} p-4 rounded-md hover:opacity-80 transition-colors border border-gray-300 dark:border-gray-700`}>
+                <Link key={index} href={link.url} target="_blank" rel="noopener noreferrer" className={`block ${link.color} p-6 rounded-md hover:opacity-80 transition-colors border border-gray-300 dark:border-gray-700`}>
                   <h2 className="font-bold flex items-center">
                     <link.icon className="mr-2 text-2xl" />
                     {link.name}
@@ -144,7 +142,7 @@ export default function Component() {
               <h3 className="font-bold mb-4">Projects</h3>
               <div className="space-y-4">
                 {filteredProjects.slice(0, visibleProjects).map((project, index) => (
-                  <div key={index} className={`${project.color} p-4 rounded-md border border-gray-300 dark:border-gray-700`}>
+                  <div key={index} className={`${project.color} p-6 rounded-md border border-gray-300 dark:border-gray-700`}>
                     <h2 className="font-bold flex items-center">
                       <project.icon className="mr-2 text-2xl" />
                       {project.name}
