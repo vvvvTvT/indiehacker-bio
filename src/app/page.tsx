@@ -1,18 +1,30 @@
 'use client'
 
 import Link from 'next/link'
-import { FaTwitter, FaYoutube, FaLinkedin, FaGithub, FaInstagram, FaFacebook, FaTiktok, FaPinterest, FaReddit, FaMedium } from 'react-icons/fa'
-import { HiMail } from 'react-icons/hi'
+import { FaTwitter, FaYoutube, FaLinkedin, FaGithub, FaInstagram, FaFacebook, FaTiktok, FaPinterest, FaReddit, FaMedium, FaTelegram, FaLeaf, FaImage, FaHome, FaChartLine } from 'react-icons/fa'
 import { IoDocumentText } from 'react-icons/io5'
 import { FaCode, FaShoppingCart, FaCubes, FaCalendarAlt, FaVideo, FaDumbbell, FaLanguage } from 'react-icons/fa'
 import { BiCast } from 'react-icons/bi'
 import { AiOutlineRobot } from 'react-icons/ai'
 import { useTheme } from 'next-themes'
 import { useState, useEffect } from 'react'
+import { useInView } from 'react-intersection-observer';
 
 export default function Component() {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
+  const [visibleProjects, setVisibleProjects] = useState(5)
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const [socialRef, socialInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const [projectRef, projectInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   useEffect(() => {
     setMounted(true)
@@ -23,88 +35,143 @@ export default function Component() {
   }
 
   const socialLinks = [
-    { name: 'follow @iannuttall', icon: FaTwitter, url: 'https://twitter.com/iannuttall', description: 'this is where i\'m most active', color: 'bg-blue-100 dark:bg-blue-900' },
-    { name: 'subscribe to my youtube', icon: FaYoutube, url: 'https://www.youtube.com/@iannuttall', description: 'if you follow me i get cool gold videos', color: 'bg-red-100 dark:bg-red-900' },
-    { name: 'connect on linkedin', icon: FaLinkedin, url: 'https://www.linkedin.com/in/iannuttall/', description: 'i\'m rarely here professionally enough to be on here', color: 'bg-blue-100 dark:bg-blue-900' },
-    { name: 'follow on github', icon: FaGithub, url: 'https://github.com/iannuttall', description: 'check out my open source projects', color: 'bg-gray-100 dark:bg-gray-800' },
-    { name: 'follow on instagram', icon: FaInstagram, url: 'https://www.instagram.com/iannuttall', description: 'behind the scenes of my projects', color: 'bg-pink-100 dark:bg-pink-900' },
-    { name: 'connect on facebook', icon: FaFacebook, url: 'https://www.facebook.com/iannuttall', description: 'occasional updates and thoughts', color: 'bg-blue-100 dark:bg-blue-900' },
-    { name: 'follow on tiktok', icon: FaTiktok, url: 'https://www.tiktok.com/@iannuttall', description: 'short-form content and tips', color: 'bg-gray-100 dark:bg-gray-800' },
-    { name: 'follow on pinterest', icon: FaPinterest, url: 'https://www.pinterest.com/iannuttall', description: 'visual inspiration and project ideas', color: 'bg-red-100 dark:bg-red-900' },
-    { name: 'join me on reddit', icon: FaReddit, url: 'https://www.reddit.com/user/iannuttall', description: 'discussions and community engagement', color: 'bg-orange-100 dark:bg-orange-900' },
-    { name: 'read on medium', icon: FaMedium, url: 'https://medium.com/@iannuttall', description: 'in-depth articles and thought pieces', color: 'bg-green-100 dark:bg-green-900' },
+    { name: 'follow @wincatcher', icon: FaTwitter, url: 'https://twitter.com/wincatcher', description: 'This is where I\'m most active', color: 'bg-blue-100 dark:bg-blue-900' },
+    { name: 'Subscribe to my YouTube', icon: FaYoutube, url: 'https://www.youtube.com/@wincatcher', description: 'If you follow me I get cool gold videos', color: 'bg-red-100 dark:bg-red-900' },
+    { name: 'Connect on LinkedIn', icon: FaLinkedin, url: 'https://www.linkedin.com/in/wincatcher/', description: 'I\'m rarely here professionally enough to be on here', color: 'bg-blue-100 dark:bg-blue-900' },
+    { name: 'Follow on GitHub', icon: FaGithub, url: 'https://github.com/wincatcher', description: 'Check out my open source projects', color: 'bg-gray-100 dark:bg-gray-800' },
+    { name: 'Follow on Instagram', icon: FaInstagram, url: 'https://www.instagram.com/wincatcher', description: 'Behind the scenes of my projects', color: 'bg-pink-100 dark:bg-pink-900' },
+    { name: 'Connect on Facebook', icon: FaFacebook, url: 'https://www.facebook.com/wincatcher', description: 'Occasional updates and thoughts', color: 'bg-blue-100 dark:bg-blue-900' },
+    { name: 'Follow on TikTok', icon: FaTiktok, url: 'https://www.tiktok.com/@wincatcher', description: 'Short-form content and tips', color: 'bg-gray-100 dark:bg-gray-800' },
+    { name: 'Follow on Pinterest', icon: FaPinterest, url: 'https://www.pinterest.com/wincatcher', description: 'Visual inspiration and project ideas', color: 'bg-red-100 dark:bg-red-900' },
+    { name: 'Join me on Reddit', icon: FaReddit, url: 'https://www.reddit.com/user/wincatcher', description: 'Discussions and community engagement', color: 'bg-orange-100 dark:bg-orange-900' },
+    { name: 'Read on Medium', icon: FaMedium, url: 'https://medium.com/@wincatcher', description: 'In-depth articles and thought pieces', color: 'bg-green-100 dark:bg-green-900' },
   ]
 
   const projects = [
-    { name: 'create pages', description: 'No-code tool to create programmatic web pages. Streamline your web development process and create dynamic, data-driven pages without writing a single line of code. Perfect for marketers and entrepreneurs.', icon: IoDocumentText, color: 'bg-orange-100 dark:bg-orange-900' },
-    { name: 'practical programmatic', description: 'Comprehensive programmatic SEO course. Learn how to scale your content creation and optimize for search engines using data-driven techniques. Ideal for SEO professionals and content creators looking to boost their online presence.', icon: FaCode, color: 'bg-green-100 dark:bg-green-900' },
-    { name: 'cursor casts', description: 'Learn how to code using cursor.so. Dive into interactive coding tutorials and real-time collaboration features. Enhance your programming skills with hands-on exercises and expert guidance.', icon: BiCast, color: 'bg-gray-100 dark:bg-gray-800' },
-    { name: 'AI writing assistant', description: 'AI-powered tool for content creation. Leverage advanced language models to generate high-quality articles, blog posts, and marketing copy. Boost your productivity and overcome writer\'s block with intelligent suggestions.', icon: AiOutlineRobot, color: 'bg-blue-100 dark:bg-blue-900' },
-    { name: 'e-commerce platform', description: 'Scalable solution for online stores. Build and manage your e-commerce business with ease. Features include inventory management, secure payments, and customizable storefronts to help you grow your online presence.', icon: FaShoppingCart, color: 'bg-purple-100 dark:bg-purple-900' },
-    { name: 'blockchain explorer', description: 'Comprehensive tool for viewing blockchain transactions. Dive deep into cryptocurrency networks, analyze token movements, and track smart contract interactions. Essential for researchers and crypto enthusiasts.', icon: FaCubes, color: 'bg-yellow-100 dark:bg-yellow-900' },
-    { name: 'social media scheduler', description: 'Automate your social media posts across multiple platforms. Plan and schedule content in advance, analyze post performance, and optimize your social media strategy. Perfect for marketers and content creators.', icon: FaCalendarAlt, color: 'bg-pink-100 dark:bg-pink-900' },
-    { name: 'virtual event platform', description: 'Host engaging online conferences and meetups. Create immersive virtual spaces, manage attendees, and facilitate networking opportunities. Ideal for event organizers looking to expand their reach beyond physical limitations.', icon: FaVideo, color: 'bg-indigo-100 dark:bg-indigo-900' },
-    { name: 'fitness tracking app', description: 'Monitor your workouts and track your fitness progress. Set goals, log exercises, and visualize your improvements over time. Integrates with popular fitness devices and offers personalized workout recommendations.', icon: FaDumbbell, color: 'bg-red-100 dark:bg-red-900' },
-    { name: 'language learning game', description: 'Fun and interactive way to learn new languages. Gamify your language learning experience with challenges, quizzes, and real-world scenarios. Suitable for beginners and advanced learners alike.', icon: FaLanguage, color: 'bg-teal-100 dark:bg-teal-900' },
+    { name: 'AI Code Assistant', description: 'An advanced AI-powered coding assistant that helps developers write, debug, and optimize code across multiple programming languages. Features include real-time code suggestions, automated bug detection, and performance optimization tips.', icon: AiOutlineRobot, color: 'bg-purple-100 dark:bg-purple-900' },
+    { name: 'Blockchain Explorer Pro', description: 'A comprehensive blockchain analytics platform for cryptocurrency enthusiasts and researchers. Dive deep into transaction histories, smart contract interactions, and network statistics across multiple blockchain networks.', icon: FaCubes, color: 'bg-blue-100 dark:bg-blue-900' },
+    { name: 'EcoTrack', description: 'An innovative app that helps individuals and businesses track and reduce their carbon footprint. Features include personalized sustainability tips, carbon offset recommendations, and integration with smart home devices for energy optimization.', icon: FaLeaf, color: 'bg-green-100 dark:bg-green-900' },
+    { name: 'AI Image Generator', description: 'A powerful tool that uses advanced AI algorithms to generate unique and creative images based on text descriptions. Perfect for designers, marketers, and content creators looking for custom visuals.', icon: FaImage, color: 'bg-indigo-100 dark:bg-indigo-900' },
+    { name: 'Smart Home Hub', description: 'A centralized platform to control and automate all your smart home devices. Integrate lights, thermostats, security systems, and more for a seamless and efficient home experience.', icon: FaHome, color: 'bg-yellow-100 dark:bg-yellow-900' },
+    { name: 'Crypto Portfolio Tracker', description: 'An all-in-one solution for managing and tracking your cryptocurrency investments. Features real-time price updates, portfolio analytics, and tax reporting tools.', icon: FaChartLine, color: 'bg-red-100 dark:bg-red-900' },
+    { name: 'AI Writing Assistant', description: 'AI-powered tool for content creation. Leverage advanced language models to generate high-quality articles, blog posts, and marketing copy. Boost your productivity and overcome writer\'s block with intelligent suggestions.', icon: AiOutlineRobot, color: 'bg-blue-100 dark:bg-blue-900' },
+    { name: 'E-commerce Platform', description: 'Scalable solution for online stores. Build and manage your e-commerce business with ease. Features include inventory management, secure payments, and customizable storefronts to help you grow your online presence.', icon: FaShoppingCart, color: 'bg-purple-100 dark:bg-purple-900' },
+    { name: 'Blockchain Explorer', description: 'Comprehensive tool for viewing blockchain transactions. Dive deep into cryptocurrency networks, analyze token movements, and track smart contract interactions. Essential for researchers and crypto enthusiasts.', icon: FaCubes, color: 'bg-yellow-100 dark:bg-yellow-900' },
+    { name: 'Social Media Scheduler', description: 'Automate your social media posts across multiple platforms. Plan and schedule content in advance, analyze post performance, and optimize your social media strategy. Perfect for marketers and content creators.', icon: FaCalendarAlt, color: 'bg-pink-100 dark:bg-pink-900' },
+    { name: 'Virtual Event Platform', description: 'Host engaging online conferences and meetups. Create immersive virtual spaces, manage attendees, and facilitate networking opportunities. Ideal for event organizers looking to expand their reach beyond physical limitations.', icon: FaVideo, color: 'bg-indigo-100 dark:bg-indigo-900' },
+    { name: 'Fitness Tracking App', description: 'Monitor your workouts and track your fitness progress. Set goals, log exercises, and visualize your improvements over time. Integrates with popular fitness devices and offers personalized workout recommendations.', icon: FaDumbbell, color: 'bg-red-100 dark:bg-red-900' },
+    { name: 'Language Learning Game', description: 'Fun and interactive way to learn new languages. Gamify your language learning experience with challenges, quizzes, and real-world scenarios. Suitable for beginners and advanced learners alike.', icon: FaLanguage, color: 'bg-teal-100 dark:bg-teal-900' },
   ]
+
+  const filteredProjects = projects.filter(project =>
+    project.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    project.description.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+
+  const filteredSocialLinks = socialLinks.filter(link =>
+    link.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    link.description.toLowerCase().includes(searchTerm.toLowerCase())
+  )
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-4 md:p-24 dark:bg-gray-900 dark:text-white">
-      <button
-        onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-        className="fixed top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-800"
-      >
-        {theme === 'dark' ? '🌞' : '🌙'}
-      </button>
-
-      <div className="w-full max-w-md">
-        <h1 className="text-4xl font-bold mb-4 text-center">ian nuttall</h1>
-        <p className="text-sm mb-8 text-center">
-          life: serial internet biz builder. 100+ exits. always learning. usually from my mistakes.
-        </p>
-
-        <div className="space-y-4">
-          <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md border border-gray-300 dark:border-gray-700">
-            <h2 className="font-bold mb-2 flex items-center">
-              <HiMail className="mr-2 text-2xl" />
-              join ian's list
-            </h2>
-            <p className="text-xs mb-2">sporadic emails where i talk about what i'm working on (usually ai coding, programming and web apps)</p>
-            <form className="flex">
-              <input
-                type="email"
-                placeholder="Type your email and hit enter to join"
-                className="flex-grow p-2 text-sm border rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
-              />
-              <button type="submit" className="bg-red-500 text-white px-4 rounded-r-md hover:bg-red-600 transition-colors">
-                Go
-              </button>
-            </form>
+      <nav className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-800 shadow-md z-10">
+        <div className="container mx-auto px-4 py-2 flex justify-between items-center">
+          <h1 className="text-2xl font-bold">wincatcher</h1>
+          <div className="space-x-4">
+            <a href="#telegram" className="hover:underline">Telegram Channel</a>
+            <a href="#social" className="hover:underline">Social Media</a>
+            <a href="#projects" className="hover:underline">Projects</a>
           </div>
+          <button
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700"
+          >
+            {theme === 'dark' ? '🌞' : '🌙'}
+          </button>
+        </div>
+      </nav>
 
-          {socialLinks.map((link, index) => (
-            <Link key={index} href={link.url} className={`block ${link.color} p-4 rounded-md hover:opacity-80 transition-colors border border-gray-300 dark:border-gray-700`}>
-              <h2 className="font-bold flex items-center">
-                <link.icon className="mr-2 text-2xl" />
-                {link.name}
-              </h2>
-              <p className="text-xs">{link.description}</p>
-            </Link>
-          ))}
+      <div className="w-full max-w-6xl mt-16 flex flex-col">
+        <div className="mb-8 text-center">
+          <h1 className="text-4xl font-bold mb-2">Wincatcher</h1>
+          <p className="text-lg">Serial internet biz builder. 100+ exits. Always learning, usually from mistakes.</p>
+        </div>
 
-          <h3 className="font-bold mt-8 mb-4">projects</h3>
+        <div id="telegram" className="mb-8">
+          <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md border border-gray-300 dark:border-gray-700 max-w-md mx-auto">
+            <h2 className="font-bold mb-2 flex items-center justify-center">
+              <FaTelegram className="mr-2 text-2xl" />
+              Join wincatcher's Telegram Channel
+            </h2>
+            <p className="text-xs mb-2 text-center">Get the latest updates on ongoing projects (usually AI coding, programming, and web apps)</p>
+            <a 
+              href="https://t.me/wincatcher" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="block bg-blue-500 text-white text-center py-2 rounded-md hover:bg-blue-600 transition-colors"
+            >
+              Subscribe to Telegram Channel
+            </a>
+          </div>
+        </div>
 
-          {projects.map((project, index) => (
-            <Link key={index} href="#" className={`block ${project.color} p-4 rounded-md hover:opacity-80 transition-colors border border-gray-300 dark:border-gray-700`}>
-              <h2 className="font-bold flex items-center">
-                <project.icon className="mr-2 text-2xl" />
-                {project.name}
-              </h2>
-              <p className="text-xs">{project.description}</p>
-            </Link>
-          ))}
+        <div className="mb-8">
+          <input
+            type="text"
+            placeholder="Search projects or social media"
+            className="w-full p-2 border rounded-md"
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+
+        <div className="flex-grow overflow-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div id="social" className={`space-y-4 transition-opacity duration-1000 ${socialInView ? 'opacity-100' : 'opacity-0'}`} ref={socialRef}>
+              <h3 className="font-bold mb-4">Social Media</h3>
+              {filteredSocialLinks.map((link, index) => (
+                <Link key={index} href={link.url} target="_blank" rel="noopener noreferrer" className={`block ${link.color} p-4 rounded-md hover:opacity-80 transition-colors border border-gray-300 dark:border-gray-700`}>
+                  <h2 className="font-bold flex items-center">
+                    <link.icon className="mr-2 text-2xl" />
+                    {link.name}
+                  </h2>
+                  <p className="text-xs">{link.description}</p>
+                </Link>
+              ))}
+            </div>
+
+            <div id="projects" className={`transition-opacity duration-1000 ${projectInView ? 'opacity-100' : 'opacity-0'}`} ref={projectRef}>
+              <h3 className="font-bold mb-4">Projects</h3>
+              <div className="space-y-4">
+                {filteredProjects.slice(0, visibleProjects).map((project, index) => (
+                  <div key={index} className={`${project.color} p-4 rounded-md border border-gray-300 dark:border-gray-700`}>
+                    <h2 className="font-bold flex items-center">
+                      <project.icon className="mr-2 text-2xl" />
+                      {project.name}
+                    </h2>
+                    <p className="text-xs mb-2">{project.description}</p>
+                    <a href="#" className="text-blue-500 hover:underline text-sm">Learn More</a>
+                  </div>
+                ))}
+              </div>
+              {visibleProjects < filteredProjects.length && (
+                <button
+                  onClick={() => setVisibleProjects(prev => prev + 5)}
+                  className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
+                >
+                  Load More
+                </button>
+              )}
+            </div>
+          </div>
         </div>
       </div>
+
+      <footer className="mt-16 bg-gray-100 dark:bg-gray-800 py-8 w-full">
+        <div className="container mx-auto px-4 text-center">
+          <p>&copy; 2024 Wincatcher. All rights reserved.</p>
+        </div>
+      </footer>
     </main>
   )
 }
