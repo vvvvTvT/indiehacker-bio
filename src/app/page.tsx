@@ -101,7 +101,7 @@ export default function Component() {
           <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md border border-gray-300 dark:border-gray-700 max-w-md mx-auto">
             <h2 className="font-bold mb-2 flex items-center justify-center">
               <FaTelegram className="mr-2 text-2xl" />
-              Join Wincatcher's Telegram Channel
+              Join Wincatcher&aposs Telegram Channel
             </h2>
             <p className="text-xs mb-2 text-center">Get the latest updates on ongoing projects (usually AI coding, programming, and web apps)</p>
             <a 
