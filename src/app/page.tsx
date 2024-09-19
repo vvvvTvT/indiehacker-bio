@@ -91,9 +91,9 @@ export default function Component() {
         </div>
       </nav>
 
-      <div className="w-full max-w-6xl mt-8 flex flex-col space-y-8 p-4">
+      <div className="w-full max-w-6xl mt-6 flex flex-col space-y-8 p-4">
         <div className="mb-8 text-center">
-          <h1 className="text-4xl font-bold mb-2">Wincatcher</h1>
+          <h1 className="text-4xl font-bold mb-2">wincatcher</h1>
           <p className="text-lg">Serial internet biz builder. 100+ exits. Always learning, usually from mistakes.</p>
         </div>
 
@@ -101,7 +101,7 @@ export default function Component() {
           <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md border border-gray-300 dark:border-gray-700 max-w-md mx-auto">
             <h2 className="font-bold mb-2 flex items-center justify-center">
               <FaTelegram className="mr-2 text-2xl" />
-              Join Wincatcher&apos;s Telegram Channel
+              Join wincatcher&apos;s Telegram Channel
             </h2>
             <p className="text-xs mb-2 text-center">Get the latest updates on ongoing projects (usually AI coding, programming, and web apps)</p>
             <a 
