@@ -91,7 +91,7 @@ export default function Component() {
         </div>
       </nav>
 
-      <div className="w-full max-w-6xl mt-6 flex flex-col space-y-8 p-4">
+      <div className="w-full max-w-6xl mt-12 flex flex-col space-y-8 p-4">
         <div className="mb-8 text-center">
           <h1 className="text-4xl font-bold mb-2">wincatcher</h1>
           <p className="text-lg">Serial internet biz builder. 100+ exits. Always learning, usually from mistakes.</p>
@@ -131,11 +131,13 @@ export default function Component() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {filteredSocialLinks.map((link, index) => (
                   <Link key={index} href={link.url} target="_blank" rel="noopener noreferrer" className={`block ${link.color} p-6 rounded-md hover:opacity-80 transition-colors border border-gray-300 dark:border-gray-700`}>
-                    <h2 className="font-bold flex items-center">
-                      <link.icon className="mr-2 text-2xl" />
-                      {link.name}
-                    </h2>
-                    <p className="text-xs">{link.description}</p>
+                    <div className="flex items-center">
+                      <link.icon className="mr-4 text-2xl flex-shrink-0" />
+                      <div>
+                        <h2 className="font-bold">{link.name}</h2>
+                        <p className="text-xs">{link.description}</p>
+                      </div>
+                    </div>
                   </Link>
                 ))}
               </div>
@@ -146,12 +148,14 @@ export default function Component() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {filteredProjects.slice(0, visibleProjects).map((project, index) => (
                   <div key={index} className={`${project.color} p-6 rounded-md border border-gray-300 dark:border-gray-700`}>
-                    <h2 className="font-bold flex items-center">
-                      <project.icon className="mr-2 text-2xl" />
-                      {project.name}
-                    </h2>
-                    <p className="text-xs mb-2">{project.description}</p>
-                    <a href="#" className="text-blue-500 hover:underline text-sm">Learn More</a>
+                    <div className="flex items-center">
+                      <project.icon className="mr-4 text-2xl flex-shrink-0" />
+                      <div>
+                        <h2 className="font-bold">{project.name}</h2>
+                        <p className="text-xs mb-2">{project.description}</p>
+                        <a href="#" className="text-blue-500 hover:underline text-sm">了解更多</a>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
