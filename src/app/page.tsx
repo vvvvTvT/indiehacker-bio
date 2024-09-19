@@ -94,14 +94,14 @@ export default function Component() {
       <div className="w-full max-w-6xl mt-12 flex flex-col space-y-8 p-4">
         <div className="mb-8 text-center">
           <h1 className="text-4xl font-bold mb-2">wincatcher</h1>
-          <p className="text-lg">Serial internet biz builder. 100+ exits. Always learning, usually from mistakes.</p>
+          <p className="text-lg">Independent developer with a passion for creating innovative solutions. Over 10+ projects delivered. Always striving for excellence and continuous improvement.</p>
         </div>
 
         <div id="telegram" className="mb-4">
           <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md border border-gray-300 dark:border-gray-700 max-w-md mx-auto">
             <h2 className="font-bold mb-2 flex items-center justify-center">
               <FaTelegram className="mr-2 text-2xl" />
-              Join wincatcher&apos;s Telegram Channel
+              Join wincatcher's Telegram Channel
             </h2>
             <p className="text-xs mb-2 text-center">Get the latest updates on ongoing projects (usually AI coding, programming, and web apps)</p>
             <a 
@@ -153,7 +153,7 @@ export default function Component() {
                       <div>
                         <h2 className="font-bold">{project.name}</h2>
                         <p className="text-xs mb-2">{project.description}</p>
-                        <a href="#" className="text-blue-500 hover:underline text-sm">了解更多</a>
+                        <a href="#" className="text-blue-500 hover:underline text-sm">Learn More</a>
                       </div>
                     </div>
                   </div>
