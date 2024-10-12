@@ -1,7 +1,7 @@
 import { FaTwitter, FaYoutube, FaLinkedin, FaGithub, FaInstagram, FaFacebook, FaTiktok, FaPinterest, FaReddit, FaMedium } from 'react-icons/fa'
 
 export const socialLinks = [
-  { name: 'follow @wincatcher', icon: FaTwitter, url: 'https://twitter.com/wincatcher', description: 'This is where I\'m most active', color: 'bg-[#1DA1F2] text-white' },
+  { name: 'Follow on twitter', icon: FaTwitter, url: 'https://twitter.com/wincatcher', description: 'This is where I\'m most active', color: 'bg-[#1DA1F2] text-white' },
   { name: 'Subscribe to my YouTube', icon: FaYoutube, url: 'https://www.youtube.com/@wincatcher', description: 'If you follow me I get cool gold videos', color: 'bg-[#FF0000] text-white' },
   { name: 'Connect on LinkedIn', icon: FaLinkedin, url: 'https://www.linkedin.com/in/wincatcher/', description: 'I\'m rarely here professionally enough to be on here', color: 'bg-[#0A66C2] text-white' },
   { name: 'Follow on GitHub', icon: FaGithub, url: 'https://github.com/wincatcher', description: 'Check out my open source projects', color: 'bg-[#181717] text-white' },
