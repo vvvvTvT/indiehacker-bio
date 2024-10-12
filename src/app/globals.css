@@ -21,12 +21,11 @@ body {
   flex-direction: column;
   min-height: 100vh;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: rgb(var(--background-start-rgb));
+}
+
+.dark body {
+  background-color: rgb(17, 24, 39); /* Tailwind 的 gray-900 颜色 */
 }
 
 main {
@@ -58,8 +57,4 @@ p {
 
 html {
   scroll-padding-top: 80px; /* Adjust this value based on your header height */
-}
-
-body.dark {
-  background-color: rgb(17, 24, 39); /* 这是 Tailwind 的 gray-900 颜色 */
 }
