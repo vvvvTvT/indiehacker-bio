@@ -13,7 +13,6 @@ import Projects from '@/components/Projects'
 
 export default function Component() {
   const [mounted, setMounted] = useState(false)
-  const { theme } = useTheme()
   const [visibleProjects, setVisibleProjects] = useState(6)
   const [searchTerm, setSearchTerm] = useState('')
 
