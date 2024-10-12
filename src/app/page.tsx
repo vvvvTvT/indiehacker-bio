@@ -1,11 +1,9 @@
 'use client'
 
-import Link from 'next/link'
 import { FaTelegram } from 'react-icons/fa'
 import { useTheme } from 'next-themes'
 import { useState, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer';
-import { FaSun, FaMoon } from 'react-icons/fa'
 import { socialLinks } from '@/data/socialLinks'
 import { projects } from '@/data/projects'
 import Header from '@/components/Header'
@@ -15,7 +13,6 @@ import Projects from '@/components/Projects'
 
 export default function Component() {
   const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
   const [visibleProjects, setVisibleProjects] = useState(6)
   const [searchTerm, setSearchTerm] = useState('')
 
