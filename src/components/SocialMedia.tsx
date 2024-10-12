@@ -2,13 +2,12 @@ import Link from 'next/link'
 import { SocialLink } from '@/types/socialLink'
 
 interface SocialMediaProps {
-  searchTerm: string;
   socialInView: boolean;
   filteredSocialLinks: SocialLink[];
   socialRef: (node?: Element | null | undefined) => void;
 }
 
-export default function SocialMedia({ searchTerm, socialInView, filteredSocialLinks, socialRef }: SocialMediaProps) {
+export default function SocialMedia({ socialInView, filteredSocialLinks, socialRef }: SocialMediaProps) {
   return (
     <div
       id="social"
