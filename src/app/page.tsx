@@ -90,7 +90,6 @@ export default function Component() {
           <div className="flex-grow overflow-auto">
             <div className="flex flex-col gap-8">
               <SocialMedia 
-                searchTerm={searchTerm} 
                 socialInView={socialInView} 
                 filteredSocialLinks={filteredSocialLinks}
                 socialRef={socialRef}
