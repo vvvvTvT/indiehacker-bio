@@ -14,8 +14,8 @@ const NavButton: React.FC<NavButtonProps> = ({ href, text, icon: Icon }) => {
       href={href}
       className="nav-button text-xs md:text-sm"
     >
-      <Icon className="md:hidden text-xl" />
-      <span className="hidden md:inline whitespace-nowrap">{text}</span>
+      <Icon className="text-xl mr-2" />
+      <span className="whitespace-nowrap">{text}</span>
     </a>
   )
 }
@@ -33,6 +33,12 @@ export default function Header() {
           <NavButton href="#projects" text="Projects" icon={FaProjectDiagram} />
         </div>
         <div className="flex items-center space-x-4">
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+          >
+            {theme === "dark" ? <FaSun className="text-xl" /> : <FaMoon className="text-xl" />}
+          </button>
           <a
             href="https://github.com/wincatcher/indiehacker-bio"
             target="_blank"
@@ -41,12 +47,6 @@ export default function Header() {
           >
             <FaGithub className="text-xl" />
           </a>
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
-          >
-            {theme === "dark" ? <FaSun className="text-xl" /> : <FaMoon className="text-xl" />}
-          </button>
         </div>
       </div>
     </nav>

@@ -68,5 +68,5 @@ html {
 }
 
 .nav-button {
-  @apply flex-1 flex items-center justify-center px-2 py-2 rounded transition-colors hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 min-w-[100px];
+  @apply flex items-center justify-center px-2 py-2 rounded transition-colors hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300;
 }
