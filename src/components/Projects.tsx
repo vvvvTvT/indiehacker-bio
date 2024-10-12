@@ -4,7 +4,7 @@ interface ProjectsProps {
   searchTerm: string;
   projectInView: boolean;
   visibleProjects: number;
-  setVisibleProjects: (value: number) => void;
+  setVisibleProjects: React.Dispatch<React.SetStateAction<number>>;
   filteredProjects: Project[];
   projectRef: (node?: Element | null | undefined) => void;
 }
@@ -46,7 +46,7 @@ export default function Projects({ projectInView, visibleProjects, setVisiblePro
       {visibleProjects < filteredProjects.length && (
         <div className="flex justify-center">
           <button
-            onClick={() => setVisibleProjects((prev) => prev + 6)}
+            onClick={() => setVisibleProjects(prev => prev + 6)}
             className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
           >
             Load More
