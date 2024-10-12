@@ -1,7 +1,6 @@
 'use client'
 
 import { FaTelegram } from 'react-icons/fa'
-import { useTheme } from 'next-themes'
 import { useState, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer';
 import { socialLinks } from '@/data/socialLinks'
