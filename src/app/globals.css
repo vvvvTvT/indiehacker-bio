@@ -58,3 +58,15 @@ p {
 html {
   scroll-padding-top: 80px; /* Adjust this value based on your header height */
 }
+
+/* 新增的样式 */
+@media (max-width: 767px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.nav-button {
+  @apply flex-1 flex items-center justify-center px-2 py-2 rounded transition-colors hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 min-w-[100px];
+}
