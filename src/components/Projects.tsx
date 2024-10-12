@@ -1,15 +1,15 @@
-import { projects } from '@/data/projects'
+import { Project } from '@/types/project'
 
 interface ProjectsProps {
   searchTerm: string;
   projectInView: boolean;
   visibleProjects: number;
   setVisibleProjects: (value: number) => void;
-  filteredProjects: any[];
+  filteredProjects: Project[];
   projectRef: (node?: Element | null | undefined) => void;
 }
 
-export default function Projects({ searchTerm, projectInView, visibleProjects, setVisibleProjects, filteredProjects, projectRef }: ProjectsProps) {
+export default function Projects({ projectInView, visibleProjects, setVisibleProjects, filteredProjects, projectRef }: ProjectsProps) {
   return (
     <div
       id="projects"

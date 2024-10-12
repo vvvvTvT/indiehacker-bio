@@ -13,6 +13,7 @@ import Projects from '@/components/Projects'
 
 export default function Component() {
   const [mounted, setMounted] = useState(false)
+  const { theme } = useTheme()
   const [visibleProjects, setVisibleProjects] = useState(6)
   const [searchTerm, setSearchTerm] = useState('')
 
@@ -47,7 +48,7 @@ export default function Component() {
   return (
     <>
       <Header />
-      <main className="flex min-h-screen flex-col items-center justify-center p-4 md:p-24 dark:bg-gray-900 dark:text-white">
+      <main className="flex flex-col items-center justify-center p-4 md:p-24 dark:bg-gray-900 dark:text-white min-h-screen">
         <div className="w-full max-w-6xl mt-12 flex flex-col space-y-8 p-4">
           <div className="mb-8 text-center">
             <h1 className="text-4xl font-bold mb-2">wincatcher</h1>

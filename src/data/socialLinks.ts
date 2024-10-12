@@ -12,4 +12,3 @@ export const socialLinks = [
   { name: 'Join me on Reddit', icon: FaReddit, url: 'https://www.reddit.com/user/wincatcher', description: 'Discussions and community engagement', color: 'bg-[#FF4500] text-white' },
   { name: 'Read on Medium', icon: FaMedium, url: 'https://medium.com/@wincatcher', description: 'In-depth articles and thought pieces', color: 'bg-[#000000] text-white' },
 ]
-
