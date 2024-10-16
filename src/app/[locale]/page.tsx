@@ -1,6 +1,6 @@
 'use client'
 
-import { FaTelegram } from 'react-icons/fa'
+import { FaTelegram, FaEnvelope } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer';
 import { socialLinks } from '@/data/socialLinks'
@@ -73,8 +73,9 @@ export default function Home() {
                 href="https://biobio.top/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block bg-blue-500 text-white text-center py-2 rounded-md hover:bg-blue-600 transition-colors"
+                className="block bg-blue-500 text-white text-center py-2 rounded-md hover:bg-blue-600 transition-colors flex items-center justify-center"
               >
+                <FaEnvelope className="mr-2" />
                 {t('telegram.button')}
               </a>
             </div>
