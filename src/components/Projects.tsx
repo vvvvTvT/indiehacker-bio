@@ -38,7 +38,7 @@ export default function Projects({ projectInView, visibleProjects, setVisiblePro
                   <p className="text-xs mb-2">{project.description[locale as keyof typeof project.description]}</p>
                   <a
                     href="#"
-                    className="text-blue-500 hover:underline text-sm"
+                    className="text-blue-500 hover:underline text-sm dark:text-blue-300 dark:hover:text-blue-200"
                   >
                     {t('learnMore')}
                   </a>
