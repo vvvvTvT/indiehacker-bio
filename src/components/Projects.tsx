@@ -3,7 +3,6 @@ import { useTranslations } from 'next-intl'
 import { useParams } from 'next/navigation'
 
 interface ProjectsProps {
-  searchTerm: string;
   projectInView: boolean;
   visibleProjects: number;
   setVisibleProjects: React.Dispatch<React.SetStateAction<number>>;

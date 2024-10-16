@@ -9,9 +9,12 @@ import { useTranslations } from 'next-intl'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: 'Indiehacker - Internet Business Builder & Innovator',
-  description: 'Unlocking the potential of the internet, one business at a time. Explore insights on AI, coding, programming, and web apps.',
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await useTranslations()
+  return {
+    title: t('title'),
+    description: t('description'),
+  }
 }
 
 export default function RootLayout({
