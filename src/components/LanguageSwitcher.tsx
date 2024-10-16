@@ -28,7 +28,7 @@ export default function LanguageSwitcher() {
               currentLocale === locale ? 'font-bold' : ''
             }`}
           >
-            {locale === 'en' ? 'English' : locale === 'zh' ? '中文' : locale === 'ja' ? '日本語' : '繁體中文'}
+            {locale === 'en' ? 'English' : locale === 'zh' ? '简体中文' : locale === 'ja' ? '日本語' : '繁體中文'}
           </button>
         ))}
       </div>
