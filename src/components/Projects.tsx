@@ -55,14 +55,14 @@ export default function Projects({ projectInView, visibleProjects, setVisiblePro
               <div
                 className={`${project.color} p-6 rounded-md border border-gray-300 dark:border-gray-700 h-36 flex flex-col`}
               >
-                <div className="flex items-start">
+                <div className="flex items-start flex-grow">
                   <project.icon className="mr-4 text-2xl flex-shrink-0" />
                   <div className="flex-grow">
                     <h2 className="font-bold mb-2">{project.name[locale as keyof typeof project.name]}</h2>
                     <p className="text-xs mb-2 line-clamp-2">{project.description[locale as keyof typeof project.description]}</p>
                   </div>
                 </div>
-                <div className="mt-auto">
+                <div className="flex justify-end">
                   <a
                     href="#"
                     className="text-blue-500 hover:underline text-sm dark:text-blue-300 dark:hover:text-blue-200"
