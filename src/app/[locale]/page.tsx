@@ -97,7 +97,6 @@ export default function Home() {
                 socialRef={socialRef}
               />
               <Projects
-                searchTerm={searchTerm}
                 projectInView={projectInView}
                 visibleProjects={visibleProjects}
                 setVisibleProjects={setVisibleProjects}
