@@ -16,8 +16,8 @@ const NavButton: React.FC<NavButtonProps> = ({ href, text, icon: Icon }) => {
       href={href}
       className="nav-button text-xs md:text-sm"
     >
-      <Icon className="text-xl mr-2" />
-      <span className="whitespace-nowrap">{text}</span>
+      <Icon className="text-xl" />
+      <span className="hidden md:inline ml-2 whitespace-nowrap">{text}</span>
     </a>
   )
 }
