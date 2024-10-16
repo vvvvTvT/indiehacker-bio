@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { SocialLink } from '@/types/socialLink'
 import { useTranslations } from 'next-intl'
 import { useParams } from 'next/navigation'
+import { FaUsers } from 'react-icons/fa'
 
 interface SocialMediaProps {
   socialInView: boolean;
@@ -21,7 +22,10 @@ export default function SocialMedia({ socialInView, filteredSocialLinks, socialR
       }`}
       ref={socialRef}
     >
-      <h3 className="font-bold mb-4">{t('title')}</h3>
+      <div className="flex items-center mb-4">
+        <FaUsers className="mr-2 text-xl" />
+        <h3 className="font-bold">{t('title')}</h3>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {filteredSocialLinks.map((link, index) => (
           <Link

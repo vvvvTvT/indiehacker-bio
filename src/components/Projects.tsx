@@ -1,6 +1,7 @@
 import { Project } from '@/types/project'
 import { useTranslations } from 'next-intl'
 import { useParams } from 'next/navigation'
+import { FaProjectDiagram } from 'react-icons/fa'
 
 interface ProjectsProps {
   projectInView: boolean;
@@ -22,7 +23,10 @@ export default function Projects({ projectInView, visibleProjects, setVisiblePro
       }`}
       ref={projectRef}
     >
-      <h3 className="font-bold mb-4">{t('title')}</h3>
+      <div className="flex items-center mb-4">
+        <FaProjectDiagram className="mr-2 text-xl" />
+        <h3 className="font-bold">{t('title')}</h3>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {filteredProjects
           .slice(0, visibleProjects)
