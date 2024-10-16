@@ -1,0 +1,31 @@
+{
+    "title": "インディーハッカー - インターネットビジネスビルダー＆イノベーター",
+    "description": "インターネットの可能性を一つずつ解き放つ。AI、コーディング、プログラミング、ウェブアプリに関する洞察を探求。",
+    "header": {
+      "title": "インディーハッカー",
+      "telegramChannel": "Telegramチャンネル",
+      "socialMedia": "ソーシャルメディア",
+      "projects": "プロジェクト"
+    },
+    "main": {
+      "title": "インディーハッカー",
+      "subtitle": "革新的なソリューションを生み出すことに情熱を注ぐ独立開発者。10以上のプロジェクトを提供。常に卓越性と継続的な改善を追求。",
+      "telegram": {
+        "title": "インディーハッカーのTelegramチャンネルに参加",
+        "description": "進行中のプロジェクトに関する最新情報を入手（通常はAIコーディング、プログラミング、ウェブアプリ）",
+        "button": "Telegramチャンネルを購読"
+      },
+      "searchPlaceholder": "プロジェクトまたはソーシャルメディアを検索",
+      "socialMedia": {
+        "title": "ソーシャルメディア"
+      },
+      "projects": {
+        "title": "プロジェクト",
+        "learnMore": "詳細を見る",
+        "loadMore": "さらに読み込む"
+      }
+    },
+    "footer": {
+      "copyright": "著作権 © {year} - すべての権利は以下に帰属します"
+    }
+  }

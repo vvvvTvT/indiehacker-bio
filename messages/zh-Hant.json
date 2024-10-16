@@ -1,0 +1,31 @@
+{
+    "title": "獨立開發者 - 互聯網創業者與創新者",
+    "description": "一次一個項目，釋放互聯網的潛力。探索人工智能、編碼、程式設計和網絡應用的見解。",
+    "header": {
+      "title": "獨立開發者",
+      "telegramChannel": "Telegram頻道",
+      "socialMedia": "社交媒體",
+      "projects": "項目"
+    },
+    "main": {
+      "title": "獨立開發者",
+      "subtitle": "熱衷於創造創新解決方案的獨立開發者。已交付10多個項目。始終追求卓越和持續改進。",
+      "telegram": {
+        "title": "加入獨立開發者的Telegram頻道",
+        "description": "獲取正在進行的項目的最新更新（通常是人工智能編碼、程式設計和網絡應用）",
+        "button": "訂閱Telegram頻道"
+      },
+      "searchPlaceholder": "搜索項目或社交媒體",
+      "socialMedia": {
+        "title": "社交媒體"
+      },
+      "projects": {
+        "title": "項目",
+        "learnMore": "了解更多",
+        "loadMore": "加載更多"
+      }
+    },
+    "footer": {
+      "copyright": "版權所有 © {year} - 保留所有權利"
+    }
+  }
