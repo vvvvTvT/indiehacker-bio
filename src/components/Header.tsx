@@ -2,6 +2,7 @@ import { FaSun, FaMoon, FaTelegram, FaUsers, FaProjectDiagram, FaGithub } from '
 import { useTheme } from 'next-themes'
 import { IconType } from 'react-icons'
 import { useTranslations } from 'next-intl'
+import LanguageSwitcher from './LanguageSwitcher'
 
 interface NavButtonProps {
   href: string;
@@ -41,6 +42,7 @@ export default function Header() {
           >
             {theme === "dark" ? <FaSun className="text-xl" /> : <FaMoon className="text-xl" />}
           </button>
+          <LanguageSwitcher />
           <a
             href="https://github.com/wincatcher/indiehacker-bio"
             target="_blank"
