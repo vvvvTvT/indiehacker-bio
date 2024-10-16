@@ -29,7 +29,12 @@ export default function Header() {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/70 dark:bg-gray-900/70 backdrop-blur-md shadow-md z-10">
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
-        <h1 className="text-2xl text-gray-800 dark:text-white">{t('title')}</h1>
+        <div className="flex items-center">
+          <img src="/favicon-32x32.png" alt="Logo" className="mr-2 w-8 h-8" />
+          <h1 className="text-2xl text-gray-800 dark:text-white">
+            <span className="hidden md:inline">{t('title')}</span>
+          </h1>
+        </div>
         <div className="flex-1 flex justify-center space-x-2 max-w-md mx-auto">
           <NavButton href="#telegram" text={t('telegramChannel')} icon={FaTelegram} />
           <NavButton href="#social" text={t('socialMedia')} icon={FaUsers} />
