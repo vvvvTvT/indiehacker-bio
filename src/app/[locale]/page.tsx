@@ -12,7 +12,10 @@ import Projects from '@/components/Projects'
 import { useTranslations } from 'next-intl'
 import { useParams } from 'next/navigation'
 
-export default function Component() {
+export default function Home() {
+  const t = useTranslations('main');
+  const { locale } = useParams();
+
   const [mounted, setMounted] = useState(false)
   const [visibleProjects, setVisibleProjects] = useState(6)
   const [searchTerm, setSearchTerm] = useState('')
@@ -35,9 +38,6 @@ export default function Component() {
     return null
   }
 
-  const t = useTranslations()
-  const { locale } = useParams()
-
   const filteredProjects = projects.filter(project =>
     project.name[locale as keyof typeof project.name].toLowerCase().includes(searchTerm.toLowerCase()) ||
     project.description[locale as keyof typeof project.description].toLowerCase().includes(searchTerm.toLowerCase())
@@ -54,9 +54,9 @@ export default function Component() {
       <main className="flex flex-col items-center justify-center p-4 md:p-24 bg-white dark:bg-gray-900 dark:text-white">
         <div className="w-full max-w-6xl mt-12 flex flex-col space-y-8 p-4">
           <div className="mb-8 text-center">
-            <h1 className="text-3xl mb-2">{t('main.title')}</h1>
+            <h1 className="text-3xl mb-2">{t('title')}</h1>
             <p className="text-lg">
-              {t('main.subtitle')}
+              {t('subtitle')}
             </p>
           </div>
 
@@ -64,10 +64,10 @@ export default function Component() {
             <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md border border-gray-300 dark:border-gray-700 max-w-md mx-auto">
               <h2 className="font-bold mb-2 flex items-center justify-center">
                 <FaTelegram className="mr-2 text-2xl" />
-                {t('main.telegram.title')}
+                {t('telegram.title')}
               </h2>
               <p className="text-xs mb-2 text-center">
-                {t('main.telegram.description')}
+                {t('telegram.description')}
               </p>
               <a
                 href="https://biobio.top/"
@@ -75,7 +75,7 @@ export default function Component() {
                 rel="noopener noreferrer"
                 className="block bg-blue-500 text-white text-center py-2 rounded-md hover:bg-blue-600 transition-colors"
               >
-                {t('main.telegram.button')}
+                {t('telegram.button')}
               </a>
             </div>
           </div>
@@ -83,7 +83,7 @@ export default function Component() {
           <div className="mb-8">
             <input
               type="text"
-              placeholder={t('main.searchPlaceholder')}
+              placeholder={t('searchPlaceholder')}
               className="w-full p-2 border rounded-md"
               onChange={(e) => setSearchTerm(e.target.value)}
             />
