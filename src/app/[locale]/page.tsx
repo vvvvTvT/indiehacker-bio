@@ -9,6 +9,8 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import SocialMedia from '@/components/SocialMedia'
 import Projects from '@/components/Projects'
+import { useTranslations } from 'next-intl'
+import { useParams } from 'next/navigation'
 
 export default function Component() {
   const [mounted, setMounted] = useState(false)
@@ -33,14 +35,17 @@ export default function Component() {
     return null
   }
 
+  const t = useTranslations()
+  const { locale } = useParams()
+
   const filteredProjects = projects.filter(project =>
-    project.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    project.description.toLowerCase().includes(searchTerm.toLowerCase())
+    project.name[locale as keyof typeof project.name].toLowerCase().includes(searchTerm.toLowerCase()) ||
+    project.description[locale as keyof typeof project.description].toLowerCase().includes(searchTerm.toLowerCase())
   )
 
   const filteredSocialLinks = socialLinks.filter(link =>
-    link.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    link.description.toLowerCase().includes(searchTerm.toLowerCase())
+    link.name[locale as keyof typeof link.name].toLowerCase().includes(searchTerm.toLowerCase()) ||
+    link.description[locale as keyof typeof link.description].toLowerCase().includes(searchTerm.toLowerCase())
   )
 
   return (
@@ -49,11 +54,9 @@ export default function Component() {
       <main className="flex flex-col items-center justify-center p-4 md:p-24 bg-white dark:bg-gray-900 dark:text-white">
         <div className="w-full max-w-6xl mt-12 flex flex-col space-y-8 p-4">
           <div className="mb-8 text-center">
-            <h1 className="text-3xl  mb-2">Indiehacker</h1>
+            <h1 className="text-3xl mb-2">{t('main.title')}</h1>
             <p className="text-lg">
-              Independent developer with a passion for creating innovative
-              solutions. Over 10+ projects delivered. Always striving for
-              excellence and continuous improvement.
+              {t('main.subtitle')}
             </p>
           </div>
 
@@ -61,11 +64,10 @@ export default function Component() {
             <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md border border-gray-300 dark:border-gray-700 max-w-md mx-auto">
               <h2 className="font-bold mb-2 flex items-center justify-center">
                 <FaTelegram className="mr-2 text-2xl" />
-                Join Indiehacker&apos;s Telegram Channel
+                {t('main.telegram.title')}
               </h2>
               <p className="text-xs mb-2 text-center">
-                Get the latest updates on ongoing projects (usually AI coding,
-                programming, and web apps)
+                {t('main.telegram.description')}
               </p>
               <a
                 href="https://biobio.top/"
@@ -73,7 +75,7 @@ export default function Component() {
                 rel="noopener noreferrer"
                 className="block bg-blue-500 text-white text-center py-2 rounded-md hover:bg-blue-600 transition-colors"
               >
-                Subscribe to Telegram Channel
+                {t('main.telegram.button')}
               </a>
             </div>
           </div>
@@ -81,7 +83,7 @@ export default function Component() {
           <div className="mb-8">
             <input
               type="text"
-              placeholder="Search projects or social media"
+              placeholder={t('main.searchPlaceholder')}
               className="w-full p-2 border rounded-md"
               onChange={(e) => setSearchTerm(e.target.value)}
             />

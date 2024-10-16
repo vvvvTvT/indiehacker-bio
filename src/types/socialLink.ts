@@ -1,9 +1,15 @@
 import { IconType } from 'react-icons';
 
 export interface SocialLink {
-  name: string;
+  name: {
+    en: string;
+    zh: string;
+  };
   icon: IconType;
   url: string;
-  description: string;
+  description: {
+    en: string;
+    zh: string;
+  };
   color: string;
 }

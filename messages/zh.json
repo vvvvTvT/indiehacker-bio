@@ -1,0 +1,31 @@
+{
+    "title": "独立开发者 - 互联网创业者与创新者",
+    "description": "一次一个项目,释放互联网的潜力。探索人工智能、编码、编程和网络应用的见解。",
+    "header": {
+      "title": "独立开发者",
+      "telegramChannel": "电报频道",
+      "socialMedia": "社交媒体",
+      "projects": "项目"
+    },
+    "main": {
+      "title": "独立开发者",
+      "subtitle": "热衷于创造创新解决方案的独立开发者。已交付10多个项目。始终追求卓越和持续改进。",
+      "telegram": {
+        "title": "加入独立开发者的电报频道",
+        "description": "获取正在进行的项目的最新更新(通常是人工智能编码、编程和网络应用)",
+        "button": "订阅电报频道"
+      },
+      "searchPlaceholder": "搜索项目或社交媒体",
+      "socialMedia": {
+        "title": "社交媒体"
+      },
+      "projects": {
+        "title": "项目",
+        "learnMore": "了解更多",
+        "loadMore": "加载更多"
+      }
+    },
+    "footer": {
+      "copyright": "版权所有 © {year} - 保留所有权利"
+    }
+  }

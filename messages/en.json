@@ -1,0 +1,31 @@
+{
+    "title": "Indiehacker - Internet Business Builder & Innovator",
+    "description": "Unlocking the potential of the internet, one business at a time. Explore insights on AI, coding, programming, and web apps.",
+    "header": {
+      "title": "Indiehacker",
+      "telegramChannel": "Telegram Channel",
+      "socialMedia": "Social Media",
+      "projects": "Projects"
+    },
+    "main": {
+      "title": "Indiehacker",
+      "subtitle": "Independent developer with a passion for creating innovative solutions. Over 10+ projects delivered. Always striving for excellence and continuous improvement.",
+      "telegram": {
+        "title": "Join Indiehacker's Telegram Channel",
+        "description": "Get the latest updates on ongoing projects (usually AI coding, programming, and web apps)",
+        "button": "Subscribe to Telegram Channel"
+      },
+      "searchPlaceholder": "Search projects or social media",
+      "socialMedia": {
+        "title": "Social Media"
+      },
+      "projects": {
+        "title": "Projects",
+        "learnMore": "Learn More",
+        "loadMore": "Load More"
+      }
+    },
+    "footer": {
+      "copyright": "Copyright © {year} - All right reserved by"
+    }
+  }

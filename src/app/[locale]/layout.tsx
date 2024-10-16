@@ -1,8 +1,11 @@
-import './globals.css'
+'use client'
+
+import '../globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
+import { useTranslations } from 'next-intl'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,12 +16,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params: { locale }
 }: {
   children: React.ReactNode
+  params: { locale: string }
 }) {
+  const t = useTranslations()
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <Head>
+        <title>{t('title')}</title>
+        <meta name="description" content={t('description')} />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
