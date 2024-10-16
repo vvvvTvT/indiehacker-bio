@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
-import { useLocale } from 'next-intl'
 import { notFound } from 'next/navigation'
 import { NextIntlClientProvider } from 'next-intl'
 
