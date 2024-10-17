@@ -1,8 +1,16 @@
-[English](README.md) | [简体中文](README-CN.md) | [繁體中文](README-Hant.md) | [日本語](README-JA.md)
+[English](README-EN.md) | [简体中文](README.md) | [繁體中文](README-Hant.md) | [日本語](README-JA.md)
 
 # Indiehacker Bio
 
 Indiehacker Bio 是一個現代化的、多語言支持的個人展示網站，專為獨立開發者和互聯網創業者設計。本項目使用 Next.js 構建，結合了多種先進的 Web 技術，為用戶提供了一個優雅、響應式的在線個人簡介平台。
+
+## DEMO
+
+[ https://indiehacker-bio.vercel.app/zh-Hant ]( https://indiehacker-bio.vercel.app/zh-Hant )
+
+## 预览
+
+![独立开发者在线社媒、项目展示开源模板-Indiehacker-bio-social-media-projects-theme-light](https://github.com/user-attachments/assets/d1107139-f019-4fe3-b2cd-9fb764e3e01d)
 
 ## 項目特色
 

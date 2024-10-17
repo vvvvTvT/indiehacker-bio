@@ -1,8 +1,16 @@
-[English](README.md) | [简体中文](README-CN.md) | [繁體中文](README-Hant.md) | [日本語](README-JA.md)
+[English](README-EN.md) | [简体中文](README.md) | [繁體中文](README-Hant.md) | [日本語](README-JA.md)
 
 # Indiehacker Bio
 
 Indiehacker Bio は、独立開発者とインターネット起業家のために設計された、現代的で多言語対応の個人ショーケースウェブサイトです。このプロジェクトは Next.js を使用して構築され、さまざまな先進的な Web 技術を組み合わせて、ユーザーにエレガントでレスポンシブなオンライン個人プロフィールプラットフォームを提供します。
+
+## DEMO
+
+[ https://indiehacker-bio.vercel.app/jp ]( https://indiehacker-bio.vercel.app/jp )
+
+## 预览
+
+![独立开发者在线社媒、项目展示开源模板-Indiehacker-bio-social-media-projects-theme-light](https://github.com/user-attachments/assets/d1107139-f019-4fe3-b2cd-9fb764e3e01d)
 
 ## プロジェクトの特徴
 
