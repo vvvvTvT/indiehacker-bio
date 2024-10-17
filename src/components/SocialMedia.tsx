@@ -56,11 +56,11 @@ export default function SocialMedia({ socialInView, filteredSocialLinks, socialR
               rel="noopener noreferrer"
               className={`block ${link.color} p-6 rounded-md hover:opacity-80 transition-colors border border-gray-300 dark:border-gray-700`}
             >
-              <div className="flex items-center">
+              <div className="flex items-center h-24">
                 <link.icon className="mr-4 text-2xl flex-shrink-0" />
                 <div>
                   <h2 className="font-bold">{link.name[locale as keyof typeof link.name]}</h2>
-                  <p className="text-xs">{link.description[locale as keyof typeof link.description]}</p>
+                  <p className="text-xs line-clamp-3">{link.description[locale as keyof typeof link.description]}</p>
                 </div>
               </div>
             </Link>
