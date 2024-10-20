@@ -7,7 +7,7 @@ Indiehacker Bio is a modern, multilingual personal showcase website designed for
 
 ## DEMO
 
-[ https://indiehacker-bio.vercel.app/en ]( https://indiehacker-bio.vercel.app/en )
+[ https://biobio.top/en/ ]( https://biobio.top/en/ )
 
 ## 预览
 

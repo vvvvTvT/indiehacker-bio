@@ -6,7 +6,7 @@ Indiehacker Bio は、独立開発者とインターネット起業家のため�
 
 ## DEMO
 
-[ https://indiehacker-bio.vercel.app/ja ]( https://indiehacker-bio.vercel.app/ja )
+[ https://biobio.top/ja/ ]( https://biobio.top/ja/ )
 
 ## 预览
 

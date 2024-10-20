@@ -6,7 +6,7 @@ Indiehacker Bio 是一個現代化的、多語言支持的個人展示網站，�
 
 ## DEMO
 
-[ https://indiehacker-bio.vercel.app/zh-Hant ]( https://indiehacker-bio.vercel.app/zh-Hant )
+[ https://biobio.top/zh-Hant/ ]( https://biobio.top/zh-Hant/ )
 
 ## 预览
 

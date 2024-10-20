@@ -8,7 +8,7 @@ Indiehacker Bio 是一个现代化的、多语言支持的个人展示网站，�
 
 ## DEMO
 
-[ https://indiehacker-bio.vercel.app/zh ]( https://indiehacker-bio.vercel.app/zh )
+[ https://biobio.top/zh/ ]( https://biobio.top/zh/ )
 
 ## 预览
 
