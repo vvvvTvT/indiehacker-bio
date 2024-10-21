@@ -40,6 +40,7 @@ export default async function RootLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="1415ae7d-d364-4b98-b773-58802dbdf0ad"></script>
       </Head>
       <body className={`${inter.className} bg-white dark:bg-gray-900`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
