@@ -123,3 +123,5 @@ You can also support the ongoing development of the project by:
 - Contributing code or documentation
 
 Thank you for your support!
+
+![Alt](https://repobeats.axiom.co/api/embed/08a6938436b0c5394eb7d13b0538d147f57a1876.svg "Repobeats analytics image")

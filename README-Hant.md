@@ -122,3 +122,5 @@ npm start
 - 貢獻代碼或文檔
 
 感謝你的支持！
+
+![Alt](https://repobeats.axiom.co/api/embed/08a6938436b0c5394eb7d13b0538d147f57a1876.svg "Repobeats analytics image")
