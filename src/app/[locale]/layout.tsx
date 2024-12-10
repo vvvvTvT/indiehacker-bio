@@ -34,6 +34,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <Head>
+      <script defer src="https://analytics.freeurl.top/script.js" data-website-id="f2852587-281a-4858-ac6f-0b51af60e2ef"></script>
         <title>{messages.title}</title>
         <meta name="description" content={messages.description} />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
