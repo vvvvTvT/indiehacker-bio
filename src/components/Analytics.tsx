@@ -17,6 +17,7 @@ export default function Analytics() {
         data-website-id="1415ae7d-d364-4b98-b773-58802dbdf0ad"
         strategy="afterInteractive"
       />
+      <Script defer src="https://analytics.freeurl.top/script.js" data-website-id="f2852587-281a-4858-ac6f-0b51af60e2ef" strategy="afterInteractive" />
     </>
   )
 }
