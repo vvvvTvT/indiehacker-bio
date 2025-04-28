@@ -4,8 +4,8 @@ import { FaLeaf, FaImage, FaHome, FaChartLine, FaVideo, FaCalendarAlt, FaDumbbel
 export const projects = [
   { 
     name: {
-      en: 'AI Code Assistant',
-      zh: 'AI代码助手',
+      en: 'Vsearch',
+      zh: 'Vsearch——私有化搜索引擎',
       ja: 'AIコードアシスタント',
       'zh-Hant': 'AI程式碼助手'
     },
